@@ -1,6 +1,9 @@
 let speech;
 let input = '';
 let voiceOptions;
+let pitchSlider;
+let rateSlider;
+let volumeSlider
 
 function setup() {
   noCanvas();
@@ -8,19 +11,19 @@ function setup() {
   speech.onLoad = voicesReady;
 
   input = select('#text_to_read');
-  const btn = createButton('Read');
+  const btn = select('#readNow');
   btn.mousePressed(readAloud);
   voiceOptions = select('#voices');
   pitchSlider = select('#pitchSlider');
   rateSlider = select('#rateSlider');
-  volumeSlider = createSlider(0.0, 1.0, 1.0, 0.1);
+  volumeSlider = select('#volSlider');
 
   function voicesReady() {
     voices = speech.voices;
     for(let i=0; i<voices.length; i++) {
       voiceOptions.option(voices[i].name);
-      voiceOptions.selected(voices[0].name);
     }
+    voiceOptions.selected(voices[0].name);
   }
 }
 
