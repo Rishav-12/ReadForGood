@@ -7,12 +7,12 @@ function setup() {
   speech = new p5.Speech();
   speech.onLoad = voicesReady;
 
-  input = createInput('Hello World');
+  input = select('#text_to_read');
   const btn = createButton('Read');
   btn.mousePressed(readAloud);
-  voiceOptions = createSelect();
-  pitchSlider = createSlider(0.01, 2.0, 1.0, 0.01);
-  rateSlider = createSlider(0.1, 2.0, 1.0, 0.1);
+  voiceOptions = select('#voices');
+  pitchSlider = select('#pitchSlider');
+  rateSlider = select('#rateSlider');
   volumeSlider = createSlider(0.0, 1.0, 1.0, 0.1);
 
   function voicesReady() {

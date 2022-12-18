@@ -11,6 +11,16 @@
   </head>
   <body>
     <main>
+      <form>
+        <label for="text_to_read">Enter text</label>
+        <input type="text" name="text_to_read" id="text_to_read" value="Hello World"><br>
+        <label for="voices">Voice</label>
+        <select name="voices" id="voices"></select><br>
+        <label for="pitchSlider">Pitch</label>
+        <input type="range" name="pitchSlider" id="pitchSlider" min="0.01" max="2.0" step="0.01" value="1.0"><br>
+        <label for="rateSlider">Rate</label>
+        <input type="range" name="rateSlider" id="rateSlider" min="0.1" max="2.0" step="0.1" value="1.0"><br>
+      </form>
     </main>
     <script src="sketch.js"></script>
   </body>
